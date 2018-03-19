@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+            crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/semantic.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/semantic.min.js"></script>
+		<script type="text/javascript" src="image-editor.js"></script>
+		<script type="text/javascript" src="image-editor-example.js"></script>
+	</head>
+	<body>
+		<div class="ui header" style="text-align:center;margin-top:20px;">
+			Crop plugin example
+			<div class="sub header">
+				Drag the crop window to crop out a section of the image
+			</div>
+		</div>
+		<div class="ui container" id="edit-image-container" style="margin:20px;z-index:100;background:white;text-align:center;">
+			<!-- The container to crop the image that is visible on the screen with a cropping window-->
+			<div id="crop-image-container">
+				<img src="#" style="display:none;"/>
+				<canvas id="crop-image-canvas">
+				</canvas>
+			</div>
+			
+			<!-- The crop resize container, contains buttons to resize the image-->
+			<div class="crop-resize-container" style="padding: 10px;">
+				<span>Zoom </span>
+				<div id="image-size-input-container">
+					<input type="range" id="image-size" step="7" min="0" max="100"/>
+				</div>
+				<div class="image-size-buttons ui mini buttons">
+					<div class="ui button basic green minus-button" style="min-width: 40px!important;padding: 12px;">
+						<i class="minus icon" style="margin-right: 0px;"></i>
+					</div>
+					<div class="ui button basic green plus-button" style="min-width: 40px!important;padding: 12px;">
+						<i class="plus icon" style="margin-right: 0px;"></i>
+					</div>
+				</div>
+			</div>
+			
+			<!-- The canvas that is used to draw the cropped portion of the image-->
+			<div id="cropped-image-container" style="padding-left:5px;display:none;">
+				<canvas id="cropped-image-canvas">
+				</canvas>
+			</div>
+			
+			<!-- The cropped image image-->
+			<div class="crop-image" style="margin-top:30px;">
+				<div class="ui header">
+					Cropped Image
+					<div class="sub header">
+						You can save this image.
+					</div>
+				</div>
+				<img id= "image-to-save"/>
+			</div>
+		</div>
+	</body>
+</html>
